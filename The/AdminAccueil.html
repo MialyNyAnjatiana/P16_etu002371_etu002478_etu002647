@@ -12,27 +12,28 @@
     <title>Production de thé</title>
     <center>
     <nav class="navbar navbar-default">
-        <div class="container-fluid">   
-            
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-            <ul class="nav navbar-nav navbar-right">
-               
-              <li><a href=Cueillir.html><h4>Cuellir</h4></a></li>
-              <li><a href="Depenses.html"><h4>Voir les depenses</h4></a></li>
-            
-                
-            </div>
-        </div>
-    </nav>
-  </center>
+      <div class="container-fluid">   
+          
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          
+          <ul class="nav navbar-nav navbar-right">
+          
+         
+          
+          <li><a href="Cueillir.html"><h4>Cuellir</h4></a></li>
+          <li><a href="Depenses.html"><h4>Gerer les depenses</h4></a></li>
+              
+          </div>
+      </div>
+  </nav>
+</center>
 </head>
 <body>
     <div class="container">
@@ -44,6 +45,7 @@
             <th scope="col">Nom</th>
             <th scope="col">Occupation</th>
             <th scope="col">Rendement</th>
+            <th scope="col">Action</th>
             
           </tr>
         </thead>
@@ -52,22 +54,27 @@
             <th scope="row">thé vert</th>
             <td>20 pieds</td>
             <td>8kg</td>
+            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
         
           </tr>
           <tr>
             <th scope="row">thé noir</th>
             <td>18 pieds</td>
             <td>5kg</td>
+            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
         
           </tr>
           <tr>
             <th scope="row">thé aromatisé</th>
             <td>7 pieds</td>
             <td>9kg</td>
+            <td><button type="button" class="btn btn-danger">Supprimer</button></td>
         
           </tr>
         </tbody>
       </table>
+      <button type="button" class="btn btn-success">Ajouter</button>
+      <br><br>
 
       <h2 >Parcelles</h2>
     
@@ -77,6 +84,7 @@
               <th scope="col">Numéro de Parcelle</th>
               <th scope="col">Numéro de Thé</th>
               <th scope="col">Surface</th>
+              <th scope="col">Action</th>
               
             </tr>
           </thead>
@@ -85,22 +93,26 @@
               <th scope="row">1</th>
               <td>thé noir</td>
               <td>0,17ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
           
             </tr>
             <tr>
               <th scope="row">2</th>
               <td>thé aromatisé</td>
               <td>0,1ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
           
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>thé vert</td>
               <td>0,20ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
           
             </tr>
           </tbody>
         </table>
+        <button type="button" class="btn btn-success">Ajouter</button>
     </div>
 
     
