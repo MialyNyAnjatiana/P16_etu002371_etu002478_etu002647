@@ -1,5 +1,5 @@
 <?php
-include 'connexion.php';
+include '../connexion.php';
 
 try {
     $conn = connect();

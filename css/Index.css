@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+Index.css@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +10,27 @@ body {
   height: 100vh;
   width: 100%;
   place-items: center;
-  background: linear-gradient(to right, #b3f3b7 0%, #beefa6 100%);
+  background-image:url("../img/thé.png");
 }
 ::selection {
   background: #ff80bf;
 }
 .container {
-  background: #fff;
+  
+  border-color: #ff0080;
+  background: #ffffffb5;
   max-width: 400px;
   width: 100%;
-  padding: 10px 30px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
 }
+img
+{
+  
+  border-radius: 50px;
+}
+
 .container form .title {
   font-size: 30px;
   font-weight: 600;
@@ -37,7 +45,7 @@ body {
   left: 0px;
   bottom: 3px;
   border-radius: 5px;
-  background: linear-gradient(to right, #ed4599 0%, #ff0080 100%);
+
 }
 .container form .input-box {
   width: 100%;

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Accueil.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <title>Tea production</title>
+    <center>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">   
+            
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <ul class="nav navbar-nav navbar-right">
+              <li><a aria-disabled="true"><h4>Accueil</h4></a></li>
+              <li><a href="Cueilleur.html"><h4>Gestion cueilleur</h4></a></li>                
+            </div>
+        </div>
+    </nav>
+  </center>
+</head>
+<body>
+    <div class="container">
+    <h2 >Variété de thé</h2>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Occupation</th>
+            <th scope="col">Rendement (par pied)</th>
+            <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <button type="button" class="btn btn-success">Ajouter</button>
+      <br><br>
+
+      <h2 >Parcelles</h2>
+    
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Numéro de Parcelle</th>
+              <th scope="col">Numéro de Thé</th>
+              <th scope="col">Surface</th>
+              <th scope="col">Action</th>
+              
+            </tr>
+          </thead>
+          <tbody id="tbody-p">
+            <tr>
+              <th scope="row">1</th>
+              <td>thé noir</td>
+              <td>0,17ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+          
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>thé aromatisé</td>
+              <td>0,1ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+          
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>thé vert</td>
+              <td>0,20ha</td>
+              <td><button type="button" class="btn btn-danger">Supprimer</button></td>
+          
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-success">Ajouter</button>
+    </div>
+
+    
+</body>
+<script>
+  function getVarieteTea() {
+    var xhr;
+
+    try { xhr = new ActiveXObject('Msxml2.XMLHTTP'); }
+    catch (e) {
+        try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+        catch (e2)  {
+            try {  xhr = new XMLHttpRequest();  }
+            catch (e3) {  xhr = false;  }
+        }
+    }
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          var retour = JSON.parse(xhr.responseText);
+          var table = document.getElementById("tbody");
+          table.innerHTML = " ";
+          
+          for (let i = 0; i < retour.length; i++) {
+            var row = document.createElement("tr");
+            
+            var th = document.createElement("th");
+            th.scope = row;
+            var thText = document.createTextNode(retour[i].nom);
+            th.appendChild(thText);
+            row.appendChild(th);
+
+            var occ = document.createElement("td");
+            var occText = document.createTextNode(retour[i].occ + " m² par pied");
+            occ.appendChild(occText);
+            row.appendChild(occ);
+
+            var rdm = document.createElement("td");
+            var rdmText = document.createTextNode(retour[i].rendement + " par mois");
+            rdm.appendChild(rdmText);
+            row.appendChild(rdm);
+
+            var inp = document.createElement("td");
+            var input = document.createElement("a");
+            input.className = "btn btn-danger";
+            input.href = "../";
+            var inputText = document.createTextNode("Supprimer");
+            input.appendChild(inputText);
+
+            inp.appendChild(input);
+            row.appendChild(inp);
+
+            table.appendChild(row);
+          }
+        } else {
+          document.sub = "Error code " + xhr.status;
+        }
+      }
+    };
+
+    xhr.open("GET", "traitement-php/liste/variete-list.php", true);
+    xhr.send(null);
+  }
+
+  function getParcelle() {
+    var xhr;
+
+    try { xhr = new ActiveXObject('Msxml2.XMLHTTP'); }
+    catch (e) {
+        try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+        catch (e2)  {
+            try {  xhr = new XMLHttpRequest();  }
+            catch (e3) {  xhr = false;  }
+        }
+    }
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4) {
+        if (xhr.status == 200) {
+          var retour = JSON.parse(xhr.responseText);
+          var table = document.getElementById("tbody-p");
+          table.innerHTML = " ";
+          
+          for (let i = 0; i < retour.length; i++) {
+            var row = document.createElement("tr");
+            
+            var th = document.createElement("th");
+            th.scope = row;
+            var thText = document.createTextNode(retour[i].num);
+            th.appendChild(thText);
+            row.appendChild(th);
+
+            var variete = document.createElement("td");
+            var varieteText = document.createTextNode(retour[i].variete);
+            variete.appendChild(varieteText);
+            row.appendChild(variete);
+
+            var srf = document.createElement("td");
+            var srfText = document.createTextNode(retour[i].surface + " ha");
+            srf.appendChild(srfText);
+            row.appendChild(srf);
+
+            var inp = document.createElement("td");
+            var input = document.createElement("a");
+            input.className = "btn btn-danger";
+            input.href = "../";
+            var inputText = document.createTextNode("Supprimer");
+            input.appendChild(inputText);
+
+            inp.appendChild(input);
+            row.appendChild(inp);
+
+            table.appendChild(row);
+          }
+        } else {
+          document.sub = "Error code " + xhr.status;
+        }
+      }
+    };
+
+    xhr.open("GET", "traitement-php/liste/parcelle-list.php", true);
+    xhr.send(null);
+  }
+
+  window.onload = function() {
+    getVarieteTea();
+    getParcelle();
+  }
+</script>
+</html>

@@ -19,9 +19,9 @@ try {
     if ($user['id'] != null) {
         session_start();
         $_SESSION['user'] = $user;
-        header('Location:../Index.html');
+        header('Location:../Accueil.html');
     } else {
-        header('Location:../User.html');
+        header('Location:../user.html');
     }
 } catch (PDOException $e) {
     print 'Erreur :'.$e->getMessage().'<br />';

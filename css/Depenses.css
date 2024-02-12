@@ -1,0 +1,17 @@
+.container {
+    background: #ffffffb5;
+    max-width: 800px;
+    width: 100%;
+    padding: 10px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    margin-right: 50px;
+  }
+  body {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    background-image:url("../img/Depenses.jpg");
+    background-repeat: no-repeat;
+  }
+

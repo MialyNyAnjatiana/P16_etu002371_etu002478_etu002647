@@ -19,7 +19,7 @@ try {
     if ($user['id'] != null) {
         session_start();
         $_SESSION['admin'] = $user;
-        header('Location:../Index.html');
+        header('Location:../AdminAccueil.html');
     } else {
         header('Location:../Admin.html');
     }

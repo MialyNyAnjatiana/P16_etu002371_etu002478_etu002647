@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Accueil.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <title>Gestion cueilleur</title>
+    <center>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">   
+                
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <ul class="nav navbar-nav navbar-right">
+                
+                
+                    <li><a href="AdminAccueil.html"><h4>Accueil</h4></a></li>
+                    
+                </div>
+            </div>
+        </nav>
+    </center>
+</head>
+<body>
+    <div id="tbody">
+    </div>
+</body>
+<script>
+    function getListeCueilleur() {
+        var xhr;
+
+        try { xhr = new ActiveXObject('Msxml2.XMLHTTP'); }
+        catch (e) {
+            try {   xhr = new ActiveXObject('Microsoft.XMLHTTP'); }
+            catch (e2)  {
+                try {  xhr = new XMLHttpRequest();  }
+                catch (e3) {  xhr = false;  }
+            }
+        }
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var retour = JSON.parse(xhr.responseText);
+                    var list = document.getElementById("tbody");
+
+                    var ul = document.createElement("ul");
+                    for (let i = 0; i < retour.length; i++) {
+                        var li = document.createElement("li");
+                        var text = document.createTextNode("Id : " + retour[i].id);
+                        li.appendChild(text);
+                        ul.appendChild(li);
+
+                        var li = document.createElement("li");
+                        var text = document.createTextNode("Nom : " + retour[i].nom);
+                        li.appendChild(text);
+                        ul.appendChild(li);
+
+                        var li = document.createElement("li");
+                        var text = document.createTextNode("Date de naissance : " + retour[i].dtn);
+                        li.appendChild(text);
+                        ul.appendChild(li);
+
+                        list.appendChild(ul);
+                    }
+                } else {
+                    document.sub = "Error code " + xhr.status;
+                }
+            }
+        };
+
+        xhr.open("GET", "traitement-php/liste/cueilleur-list.php", true);
+        xhr.send(null);
+    }
+
+    window.onload = function() {
+        getListeCueilleur();
+    }
+</script>
+</html>

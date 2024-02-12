@@ -45,20 +45,23 @@ CREATE TABLE ctg_depense (
 
 CREATE TABLE depense (
     id_depense INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT NOT NULL,
     id_ctg INT NOT NULL,
     date_depense DATE NOT NULL,
     montant DECIMAL NOT NULL
 );
 ALTER TABLE depense ADD CONSTRAINT fk_ctg Foreign Key (id_ctg) REFERENCES ctg_depense(id_ctg);
+ALTER TABLE depense ADD CONSTRAINT fk_dep_user Foreign Key (id_user) REFERENCES utilisateur(id_user);
 
 CREATE TABLE cueilleur (
     id_cueilleur INT PRIMARY KEY AUTO_INCREMENT,
-    nom_cueileur VARCHAR(20) NOT NULL,
+    nom_cueilleur VARCHAR(20) NOT NULL,
     dtn_c DATE NOT NULL,
     id_genre INT NOT NULL,
     salaire DECIMAL(10.2) NOT NULL
 );
 ALTER TABLE cueilleur ADD CONSTRAINT fk_genre_c Foreign Key (id_genre) REFERENCES genre(id_genre);
+
 
 CREATE TABLE cueillette (
     id_cueillette INT PRIMARY KEY AUTO_INCREMENT,
@@ -80,4 +83,19 @@ INSERT INTO utilisateur VALUES (null, 'Ranto', 1, 'biased', '2002-07-06');
 INSERT INTO utilisateur VALUES (null, 'Andria', 2, 'p@ss', '1997-10-01');
 
 INSERT INTO page_admin VALUES (null, 3);
-ALTER TABLE table_name AUTO_INCREMENT = value;
+
+INSERT INTO cueilleur VALUES (null, 'Jean Dupont', '1999-04-25', 1, 20000);
+INSERT INTO cueilleur VALUES (null, 'Marie Durand', '1999-12-07', 1, 15000);
+INSERT INTO cueilleur VALUES (null, 'Pierre Lefevre', '1999-01-17', 1, 15250);
+
+INSERT INTO variete_tea (nom_tea, occupation, rendement) VALUES
+('Green Tea',  5,  0.75),
+('Black Tea',  3,  0.85),
+('White Tea',  2,  0.60),
+('Herbal Tea',  4,  0.50);
+
+INSERT INTO parcelle (id_var, surface) VALUES
+(1,  5.00),
+(2,  3.50),
+(3,  2.25),
+(4,  1.75);

@@ -10,17 +10,17 @@ body {
   height: 100vh;
   width: 100%;
   place-items: center;
-  background: linear-gradient(to right, #b3f3b7 0%, #beefa6 100%);
+  background-image:url("../img/thé.png");
 }
 ::selection {
   background: #ff80bf;
 }
 .container {
-  background: #fff;
+  background: #ffffffb5; 
   max-width: 400px;
   width: 100%;
   padding: 10px 30px;
-  border-radius: 5px;
+  border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
 .container form .title {
