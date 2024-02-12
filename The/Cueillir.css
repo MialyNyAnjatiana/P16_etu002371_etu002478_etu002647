@@ -36,3 +36,6 @@
   .container .input-box input[type="submit"]:hover {
     background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
   }
+  footer{
+    color: #ffffff;
+  }

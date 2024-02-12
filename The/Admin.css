@@ -83,7 +83,7 @@ body {
   margin: 40px 0 20px 0;
 }
 .container .input-box input[type="submit"] {
-  background: #b5c9ae;
+  color: #b5c9ae;
   font-size: 18px;
   color: #ffffff71;
   border-radius: 20px;
@@ -99,5 +99,8 @@ body {
 .container .option div {
   display: flex;
   align-items: center;
+}
+footer{
+  color: #ffffff;
 }
 
