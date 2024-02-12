@@ -21,7 +21,7 @@ try {
         $_SESSION['user'] = $user;
         header('Location:../index.html');
     } else {
-        header('Location:../admin.html');
+        header('Location:../user.html');
     }
 } catch (PDOException $e) {
     print 'Erreur :'.$e->getMessage().'<br />';
