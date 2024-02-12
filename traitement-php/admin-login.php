@@ -18,7 +18,7 @@ try {
 
     if ($user['id'] != null) {
         session_start();
-        $_SESSION['user'] = $user;
+        $_SESSION['admin'] = $user;
         header('Location:../Index.html');
     } else {
         header('Location:../Admin.html');
