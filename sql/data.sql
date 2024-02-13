@@ -1,5 +1,5 @@
-CREATE DATABASE db_P16_etu002371_etu002478_etu002647;
-USE db_P16_etu002371_etu002478_etu002647;
+-- CREATE DATABASE db2;
+-- USE db2;
 
 CREATE TABLE productionThé_genre (
     id_genre INT PRIMARY KEY AUTO_INCREMENT,
@@ -71,8 +71,17 @@ CREATE TABLE productionThé_cueillette (
     poid INT NOT NULL
 );
 ALTER TABLE productionThé_cueillette ADD CONSTRAINT fk_user_c Foreign Key (id_user) REFERENCES productionThé_utilisateur(id_user);
-ALTER TABLE productionThé_cueillette ADD CONSTRAINT fk_cueilleur Foreign Key (id_cueilleur) REFERENCES cueilleur(id_cueilleur);
-ALTER TABLE productionThé_cueillette ADD CONSTRAINT fk_parcelle Foreign Key (id_parcelle) REFERENCES parcelle(id_parcelle);
+ALTER TABLE productionThé_cueillette ADD CONSTRAINT fk_cueilleur Foreign Key (id_cueilleur) REFERENCES productionThé_cueilleur(id_cueilleur);
+ALTER TABLE productionThé_cueillette ADD CONSTRAINT fk_parcelle Foreign Key (id_parcelle) REFERENCES productionThé_parcelle(id_parcelle);
+
+CREATE TABLE productionThé_contrainte (
+    id_contrainte INT PRIMARY KEY,
+    id_cueilleur INT NOT NULL,
+    poid_min INT NOT NULL,
+    pourcentage_bonus INT NOT NULL,
+    pourcentage_malus INT NOT NULL
+);
+ALTER TABLE productionThé_contrainte ADD CONSTRAINT fk_cueilleur_cons Foreign Key (id_cueilleur) REFERENCES productionThé_cueilleur(id_cueilleur);
 
 CREATE VIEW v_depense_user AS
 SELECT d.id_depense, d.id_user, u.nom_user, c.ctg, d.date_depense, d.montant
@@ -102,16 +111,16 @@ INSERT INTO productionThé_variete_tea (nom_tea, occupation, rendement, prix_ven
     ('White Tea',  2,  0.60, 12000),
     ('Herbal Tea',  4,  0.50, 8500);
 
-INSERT INTO productionThé_ctg_depense VALUES
-    (1, "Engrais"),
-    (2, "Carburant"),
-    (3, "Logistique");
-
 INSERT INTO productionThé_parcelle (id_var, surface) VALUES
     (1,  5.00),
     (2,  3.50),
     (3,  2.25),
     (4,  1.75);
+
+INSERT INTO productionThé_ctg_depense VALUES
+    (1, "Engrais"),
+    (2, "Carburant"),
+    (3, "Logistique");
 
 INSERT INTO productionThé_depense VALUES
     (null, 1, 1, '2024-01-12', 25000),

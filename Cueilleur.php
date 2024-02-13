@@ -27,6 +27,18 @@ $username = $_SESSION['admin']['nom'];
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
+
+        #addForm1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
         
     </style>
     <center>
@@ -104,11 +116,31 @@ $username = $_SESSION['admin']['nom'];
         </form>
     </div>
 
+    <div id="addForm1" style="display: none;">
+        <h2>Modifier le salaire d'un cueilleur</h2>
+        <form id="addFormInner1">
+            <input type="hidden" name="id" id="c_id">
+            <div class="form-group">
+                <label for="salaire">Nouveau Salaire (par kg)</label>
+                <input type="number" name="sal" id="new" min="10000">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="modifier()"></button>
+            <button type="button" class="btn btn-primary" onclick="cancelAdd()">Annuler</button>
+        </form>
+    </div>
+
     <footer>RAJOELINA Arizo Ny Aina_etu2478-TOVOARIVELO Nalitiana_etu2647-ANDRIAMALALA Mialy Ny Anjatiana_etu2371</footer>
 </body>
 <script>
     function addForm() {
         document.getElementById('addForm').style.display = 'block';
+    }
+    function addForm1(id) {
+        var doc = document.getElementById("c_id");
+        var text = createTextNode(id);
+        button.appendChild(text);
+        doc.appendChild(button);
+        document.getElementById('addForm1').style.display = 'block';
     }
     function addCueilleur() {
         var nom = document.getElementById("nom").value;
@@ -206,7 +238,7 @@ $username = $_SESSION['admin']['nom'];
                         input2.type = "button";
                         input2.value = "Modifier";
                         input2.onclick = function() {
-                            modifierForm(retour[i].id);
+                            addForm1(retour[i].id);
                         }
 
                         inp2.appendChild(input2);
@@ -254,8 +286,11 @@ $username = $_SESSION['admin']['nom'];
         update();
     }
 
-    function modifier(id) {
+    function modifier() {
         var xhr;
+
+        var newVal = document.getElementById("new").value;
+        var newId = document.getElementById("c_id").value;
 
         try { xhr = new ActiveXObject('Msxml2.XMLHTTP'); }
         catch (e) {
@@ -276,7 +311,7 @@ $username = $_SESSION['admin']['nom'];
             }
         };
 
-        xhr.open("GET", "traitement-php/update/update-cueilleur.php?id=" + id, true);
+        xhr.open("GET", "traitement-php/update/update-cueilleur.php?id=" + newId + "&new=" + newVal, true);
         xhr.send(null);
         update();
     }

@@ -7,8 +7,9 @@ try {
     $nom = $_GET['nom'];
     $occ = $_GET['occ'];
     $rdm = $_GET['rdm'];
+    $prix = $_GET['prix'];
 
-    $sql = "INSERT INTO productionThé_variete_tea VALUES (null, '$nom', $occ, $rdm)";
+    $sql = "INSERT INTO productionThé_variete_tea VALUES (null, '$nom', $occ, $rdm, $prix)";
     $result = $conn->exec($sql);
     echo "success";
     $conn = null;

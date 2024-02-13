@@ -1,13 +1,17 @@
 <?php
-function getPoidCueilli(array $array_c, $poid_init) {
-    $poid  = $poid_init;
+function getSomme(array $array_c) {
+    $total  = 0;
     foreach($array_c as $row) {
-        $poid -= $row;
+        $total = $total + $row;
     }
-    return $poid;
+    return $total;
 }
 
-function getPoidRestant(array $array_c) {
-    
+function getPoidRestant(array $array_c, $poid_init) {
+    $poid = $poid_init;
+    foreach($array_c as $row) {
+        $poid = $poid - $row;
+    }
+    return $poid;
 }
 ?>

@@ -74,8 +74,8 @@ $username = $_SESSION['admin']['nom'];
                         <th scope="col">Nom</th>
                         <th scope="col">Occupation</th>
                         <th scope="col">Rendement (par pied)</th>
+                        <th scope="col">Prix de vente</th>
                         <th scope="col">Action</th>
-                        
                     </tr>
                 </thead>
                 <tbody id="tbody"></tbody>
@@ -94,7 +94,11 @@ $username = $_SESSION['admin']['nom'];
                   </div>
                   <div class="form-group">
                       <label for="rendement">Rendement</label>
-                      <input type="number" class="form-control" id="rendement" placeholder="Rendement / pied">
+                      <input type="number" class="form-control" id="rendement" placeholder="Rendement /pied">
+                  </div>
+                  <div class="form-group">
+                      <label for="prix">Prix de vente</label>
+                      <input type="number" class="form-control" id="prix" placeholder="Prix /pied"  min="10000">
                   </div>
                   <button type="button" class="btn btn-primary" onclick="add1()">Ok</button>
                   <button type="button" class="btn btn-primary" onclick="cancel1()">Annuler</button>
@@ -224,6 +228,7 @@ $username = $_SESSION['admin']['nom'];
             var nomtea = document.getElementById('nomtea').value;
             var occupation = document.getElementById('occupation').value;
             var rendement = document.getElementById('rendement').value;
+            var prix = document.getElementById("prix").value;
 
             var xhr;
 
@@ -247,7 +252,7 @@ $username = $_SESSION['admin']['nom'];
                 }
             };
 
-            xhr.open("GET", "traitement-php/insertion/ajout-variete.php?nom=" + nomtea + "&occ=" + occupation + "&rdm=" + rendement, true);
+            xhr.open("GET", "traitement-php/insertion/ajout-variete.php?nom=" + nomtea + "&occ=" + occupation + "&rdm=" + rendement + "&prix=" + prix, true);
             xhr.send(null);
             document.getElementById('addForm1').style.display = 'none';
             update();
@@ -289,6 +294,11 @@ $username = $_SESSION['admin']['nom'];
                     var rdmText = document.createTextNode(retour[i].rendement + " par mois");
                     rdm.appendChild(rdmText);
                     row.appendChild(rdm);
+
+                    var pr = document.createElement("td");
+                    var prText = document.createTextNode(retour[i].prix);
+                    pr.appendChild(prText);
+                    row.appendChild(pr);
 
                     var inp = document.createElement("td");
                     var input = document.createElement("input");
