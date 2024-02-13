@@ -21,6 +21,11 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
     margin-right: 50px;
   }
+  img
+{
+  
+  border-radius: 50px;
+}
   .container form .input-box input:focus ~ .underline::after,
 .container form .input-box input:valid ~ .underline::after {
   transform: scaleX(1);

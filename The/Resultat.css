@@ -34,7 +34,11 @@ input[type="date"] {
     font-size: 13px;
 
 }
-
+img
+{
+  
+  border-radius: 50px;
+}
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
