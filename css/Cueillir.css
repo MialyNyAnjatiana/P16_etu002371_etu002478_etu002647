@@ -4,8 +4,13 @@
     display: grid;
     height: 100vh;
     width: 100%;
-    background-image:url("../img/cueilleur.jpg");
+    background-image:url("img/cueilleur.jpg");
   }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
   .container {
     margin-top: 30px;
     background: #ffffffb5;
@@ -16,6 +21,11 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
     margin-right: 50px;
   }
+  img
+{
+  
+  border-radius: 50px;
+}
   .container form .input-box input:focus ~ .underline::after,
 .container form .input-box input:valid ~ .underline::after {
   transform: scaleX(1);
@@ -35,4 +45,7 @@
   }
   .container .input-box input[type="submit"]:hover {
     background: linear-gradient(to left, #99004d 0%, #ff0080 100%);
+  }
+  footer{
+    color: #ffffff;
   }

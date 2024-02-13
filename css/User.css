@@ -10,7 +10,7 @@ body {
   height: 100vh;
   width: 100%;
   place-items: center;
-  background-image:url("../img/thé.png");
+  background-image:url("img/thé.png");
 }
 ::selection {
   background: #ff80bf;
@@ -133,4 +133,7 @@ body {
 .container .facebook a:hover {
   background: linear-gradient(to left, #3b5998 0%, #476bb8 100%);
   margin: 20px 0 50px 0;
+}
+footer{
+  color: #ffffff;
 }

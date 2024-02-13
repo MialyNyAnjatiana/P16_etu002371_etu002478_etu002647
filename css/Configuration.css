@@ -6,6 +6,7 @@
     border-radius: 20px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
     margin-right: 50px;
+
   }
   body {
     display: grid;
@@ -20,12 +21,25 @@
 }
   footer{
     color: #ffffff;
+  }
+.d-inline-flex{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flex-row-reverse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 img
 {
   
   border-radius: 50px;
 }
-
-
-

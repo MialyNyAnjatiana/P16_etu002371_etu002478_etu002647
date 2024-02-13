@@ -13,13 +13,26 @@
     width: 100%;
     background-image:url("img/thé.png");
   }
+  footer{
+    color: #ffffff;
+  }
   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     padding: 20px;
 }
-  footer{
-    color: #ffffff;
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="date"] {
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+
 }
 img
 {
@@ -27,5 +40,16 @@ img
   border-radius: 50px;
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
 
+input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
+input[type="date"]::before {
+    content: attr(placeholder);
+    color: #999;
+}
