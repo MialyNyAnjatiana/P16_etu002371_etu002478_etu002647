@@ -75,27 +75,36 @@ ALTER TABLE cueillette ADD CONSTRAINT fk_user_c Foreign Key (id_user) REFERENCES
 ALTER TABLE cueillette ADD CONSTRAINT fk_cueilleur Foreign Key (id_cueilleur) REFERENCES cueilleur(id_cueilleur);
 ALTER TABLE cueillette ADD CONSTRAINT fk_parcelle Foreign Key (id_parcelle) REFERENCES parcelle(id_parcelle);
 
-INSERT INTO genre VALUES (1, 'male');
-INSERT INTO genre VALUES (2, 'female');
+INSERT INTO genre VALUES
+    (1, 'male'),
+    (2, 'female');
 
-INSERT INTO utilisateur VALUES (null, 'Rakoto', 1, 'motdepasse', '1999-02-28');
-INSERT INTO utilisateur VALUES (null, 'Ranto', 1, 'biased', '2002-07-06');
-INSERT INTO utilisateur VALUES (null, 'Andria', 2, 'p@ss', '1997-10-01');
+INSERT INTO utilisateur VALUES
+    (null, 'Rakoto', 1, 'motdepasse', '1999-02-28'),
+    (null, 'Ranto', 1, 'biased', '2002-07-06'),
+    (null, 'Andria', 2, 'p@ss', '1997-10-01');
 
 INSERT INTO page_admin VALUES (null, 3);
 
-INSERT INTO cueilleur VALUES (null, 'Jean Dupont', '1999-04-25', 1, 20000);
-INSERT INTO cueilleur VALUES (null, 'Marie Durand', '1999-12-07', 1, 15000);
-INSERT INTO cueilleur VALUES (null, 'Pierre Lefevre', '1999-01-17', 1, 15250);
+INSERT INTO cueilleur VALUES
+    (null, 'Jean Dupont', '1999-04-25', 1, 20000),
+    (null, 'Marie Durand', '1999-12-07', 1, 15000),
+    (null, 'Pierre Lefevre', '1999-01-17', 1, 15250);
 
 INSERT INTO variete_tea (nom_tea, occupation, rendement) VALUES
-('Green Tea',  5,  0.75),
-('Black Tea',  3,  0.85),
-('White Tea',  2,  0.60),
-('Herbal Tea',  4,  0.50);
+    ('Green Tea',  5,  0.75),
+    ('Black Tea',  3,  0.85),
+    ('White Tea',  2,  0.60),
+    ('Herbal Tea',  4,  0.50);
 
 INSERT INTO parcelle (id_var, surface) VALUES
-(1,  5.00),
-(2,  3.50),
-(3,  2.25),
-(4,  1.75);
+    (1,  5.00),
+    (2,  3.50),
+    (3,  2.25),
+    (4,  1.75);
+
+INSERT INTO depense VALUES
+    (null, 1, 1, '2024-01-12', 25000),
+    (null, 1, 2, '2023-12-10', 15000),
+    (null, 2, 2, '2024-01-14', 25000),
+    (null, 2, 2, '2024-01-17', 20000);
