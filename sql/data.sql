@@ -6,20 +6,20 @@ CREATE TABLE productionThé_genre (
     desc_genre VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE productionThé_productionThé_utilisateur (
+CREATE TABLE productionThé_utilisateur (
     id_user INT PRIMARY KEY AUTO_INCREMENT,
     nom_user VARCHAR(20) NOT NULL,
     id_genre INT NOT NULL,
     mdp VARCHAR(20) NOT NULL,
     date_naissance DATE NOT NULL
 );
-ALTER TABLE productionThé_productionThé_utilisateur ADD CONSTRAINT fk_genre Foreign Key (id_genre) REFERENCES productionThé_genre(id_genre);
+ALTER TABLE productionThé_utilisateur ADD CONSTRAINT fk_genre Foreign Key (id_genre) REFERENCES productionThé_genre(id_genre);
 
 CREATE TABLE productionThé_page_admin (
     id_admin INT PRIMARY KEY AUTO_INCREMENT,
     id_user INT NOT NULL
 );
-ALTER TABLE productionThé_page_admin ADD CONSTRAINT fk_user Foreign Key (id_user) REFERENCES productionThé_productionThé_utilisateur(id_user);
+ALTER TABLE productionThé_page_admin ADD CONSTRAINT fk_user Foreign Key (id_user) REFERENCES productionThé_utilisateur(id_user);
 
 CREATE TABLE productionThé_variete_tea (
     id_var INT PRIMARY KEY AUTO_INCREMENT,
@@ -96,11 +96,16 @@ INSERT INTO productionThé_cueilleur VALUES
     (null, 'Marie Durand', '1999-12-07', 1, 15000),
     (null, 'Pierre Lefevre', '1999-01-17', 1, 15250);
 
-INSERT INTO productionThé_variete_tea (nom_tea, occupation, rendement) VALUES
+INSERT INTO productionThé_variete_tea (nom_tea, occupation, rendement, prix_vente) VALUES
     ('Green Tea',  5,  0.75, 15000),
     ('Black Tea',  3,  0.85, 7500),
     ('White Tea',  2,  0.60, 12000),
     ('Herbal Tea',  4,  0.50, 8500);
+
+INSERT INTO productionThé_ctg_depense VALUES
+    (1, "Engrais"),
+    (2, "Carburant"),
+    (3, "Logistique");
 
 INSERT INTO productionThé_parcelle (id_var, surface) VALUES
     (1,  5.00),
