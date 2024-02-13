@@ -4,8 +4,8 @@ include '../connexion.php';
 try {
     $conn = connect();
 
-    $var = $_POST['var'];
-    $srf = $_POST['srf'];
+    $var = $_GET['var'];
+    $srf = $_GET['srf'];
 
     $sql = "INSERT INTO parcelle VALUES (null, $var, $srf)";
     $result = $conn->exec($sql);
