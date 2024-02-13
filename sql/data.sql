@@ -34,7 +34,8 @@ CREATE TABLE variete_tea (
 CREATE TABLE parcelle (
     id_parcelle INT PRIMARY KEY AUTO_INCREMENT,
     id_var INT NOT NULL,
-    surface DECIMAL(10.2) NOT NULL
+    surface DECIMAL(10.2) NOT NULL,
+    restant INT NOT NULL
 );
 ALTER TABLE parcelle ADD CONSTRAINT fk_var Foreign Key (id_var) REFERENCES variete_tea(id_var);
 

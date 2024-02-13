@@ -18,8 +18,9 @@ try {
 
     if ($user['id'] != null) {
         session_start();
+        $_SESSION['admin'] = array();
         $_SESSION['admin'] = $user;
-        header('Location:../AdminAccueil.html');
+        header('Location:../AdminAccueil.php');
     } else {
         header('Location:../Admin.html');
     }

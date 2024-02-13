@@ -7,4 +7,7 @@ function getPoidCueilli(array $array_c, $poid_init) {
     return $poid;
 }
 
+function getPoidRestant(array $array_c) {
+    
+}
 ?>

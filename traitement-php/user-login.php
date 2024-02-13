@@ -18,10 +18,11 @@ try {
 
     if ($user['id'] != null) {
         session_start();
+        $_SESSION['user'] = array();
         $_SESSION['user'] = $user;
-        header('Location:../Accueil.html');
+        header('Location:../Accueil.php');
     } else {
-        header('Location:../user.html');
+        header('Location:../User.html');
     }
 } catch (PDOException $e) {
     print 'Erreur :'.$e->getMessage().'<br />';

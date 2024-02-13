@@ -1,3 +1,7 @@
+<?php
+session_start();
+$username = $_SESSION['admin']['nom'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,10 +42,10 @@
               <span class="icon-bar"></span>
           </button>
           
-          <ul class="nav navbar-nav navbar-right">
-            <li><img src="img/Admin.png" width="100" height="100" ></li>
-            <li><a href="Accueil.html"><h4>Accueil</h4></a></li>
-            <li><a href="Configuration.html"><h4>Configuration</h4></a></li>
+          <ul class="nav navbar-nav navbar-right" id="nav">
+            <li><h2><?php echo $username ?></h2></li>
+            <li><a href="AdminAccueil.php"><h4>Accueil</h4></a></li>
+            <li><a href="Configuration.php"><h4>Configuration</h4></a></li>
             <li><a aria-disabled="true"><h4>Gestion cueilleur</h4></a></li> 
             <li><a href="traitement-php/disconnect.php"><h4>Se deconnecter</h4></a></li>
           </div>

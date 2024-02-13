@@ -1,3 +1,8 @@
+<?php
+session_start();
+$username = $_SESSION['user']['name'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +28,13 @@
                 <span class="icon-bar"></span>
             </button>
             
-            <ul class="nav navbar-nav navbar-right">
-              <li><img src="img/User.jpg" width="100" height="100" ></li>
+            <ul class="nav navbar-nav navbar-right" id="nav">
+              <li><h2><?php echo $username ?></h2></li>
               <li><a aria-disabled="true"><h4>Accueil</h4></a></li>
-              <li><a href="Cueillir.html"><h4>Cuellir</h4></a></li>
-              <li><a href="Depenses.html"><h4>Voir les depenses</h4></a></li>
-              <li><a href="Resultat.html"><h4>Voir les résultat</h4></a></li>
-              <li><a href="Liste.html"><h4>Liste des paiements</h4></a></li>
+              <li><a href="Cueillir.php"><h4>Ajout cueillette</h4></a></li>
+              <li><a href="Depenses.php"><h4>Ajout de dépenses</h4></a></li>
+              <li><a href="Resultat.php"><h4>Voir les résultat</h4></a></li>
+              <li><a href="Liste.php"><h4>Liste des paiements</h4></a></li>
               <li><a href="traitement-php/disconnect.php"><h4>Se deconnecter</h4></a></li>
             
                 

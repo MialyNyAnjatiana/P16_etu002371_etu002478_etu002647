@@ -10,7 +10,7 @@ try {
     $result->setFetchMode(PDO::FETCH_OBJ);
 
     while ($row = $result->fetch()) {
-        $retour[] = array('num' => $row->id_parcelle, 'variete' => $row->nom_tea, 'surface' => $row->surface);
+        $retour[] = array('num' => $row->id_parcelle, 'variete' => $row->nom_tea, 'surface' => $row->surface, 'restant' => $row->restant);
     }
 
     echo json_encode($retour);
