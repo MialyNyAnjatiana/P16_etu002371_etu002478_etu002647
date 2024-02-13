@@ -139,7 +139,7 @@
             xhr.send(null);
 
             document.getElementById('addForm').style.display = 'none';
-            reload();
+            update();
     }
     function cancelAdd() {
         document.getElementById('addForm').style.display = 'none';
@@ -220,7 +220,7 @@
 
         xhr.open("GET", "traitement-php/liste/cueilleur-list.php", true);
         xhr.send(null);
-        reload();
+        update();
     }
 
     function supprimer(id) {
@@ -247,7 +247,7 @@
 
         xhr.open("GET", "traitement-php/suppression/supprimer-cueilleur.php?id=" + id, true);
         xhr.send(null);
-        reload();
+        update();
     }
 
     function modifier(id) {
@@ -274,15 +274,15 @@
 
         xhr.open("GET", "traitement-php/update/update-cueilleur.php?id=" + id, true);
         xhr.send(null);
-        reload();
+        update();
     }
 
     window.onload = function() {
         getListeCueilleur();
     }
 
-    function reload() {
-        window.location.reload();
+    function update() {
+        getListeCueilleur();
     }
 </script>
 </html>

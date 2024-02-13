@@ -212,7 +212,7 @@
             xhr.send(null);
             
             document.getElementById('addParcelleForm').style.display = 'none';
-            reload();
+            update();
         }
 
         function showAddForm1() {
@@ -249,7 +249,7 @@
             xhr.open("GET", "traitement-php/insertion/ajout-variete.php?nom=" + nomtea + "&occ=" + occupation + "&rdm=" + rendement, true);
             xhr.send(null);
             document.getElementById('addForm1').style.display = 'none';
-            reload();
+            update();
         }
         function getVarieteTea() {
             var xhr;
@@ -399,7 +399,7 @@
 
             xhr.open("GET", "traitement-php/suppression/supprimer-parcelle.php?id=" + id, true);
             xhr.send(null);
-            reload();
+            update();
         }
 
         function supprimerVariete(id) {
@@ -426,7 +426,7 @@
 
             xhr.open("GET", "traitement-php/suppression/supprimer-variete.php?id=" + id, true);
             xhr.send(null);
-            reload();
+            update();
         }
 
         window.onload = function() {
@@ -434,8 +434,9 @@
             getParcelle();
         }
 
-        function reload() {
-            window.location.reload();
+        function update() {
+            getVarieteTea();
+            getParcelle();
         }
     </script>
 </html>
