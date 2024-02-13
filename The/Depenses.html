@@ -8,85 +8,83 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
     <title>Production de thé</title>
+    <center>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">   
+            
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <ul class="nav navbar-nav navbar-right">
+               
+              
+              <li><a href="Cueillir.html"><h4>Cueillir</h4></a></li>
+
+            
+                
+            </div>
+        </div>
+    </nav>
+</center>
 
 </head>
 <body>
+    <center>
     <div class="container">
-    <h2 >Ensemble des dépenses</h2>
-    
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Nom</th>
-            <th scope="col">En engrais</th>
-            <th scope="col">En Carburant</th>
-            <th scope="col">En Logistique</th>
-            <th scope="col">TOTAL</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Arizo</th>
-            <td>50.000Ar</td>
-            <td>100.000Ar</td>
-            <td>10.000Ar</td>
-            <td>160.000Ar</td>
-        
-          </tr>
-          <tr>
-            <th scope="row">Nalitiana</th>
-            <td>70.000Ar</td>
-            <td>300.000Ar</td>
-            <td>30.000Ar</td>
-            <td>400.000Ar</td>
-        
-          </tr>
-          <tr>
-            <th scope="row">Mialy</th>
-            <td>20.000Ar</td>
-            <td>50.000Ar</td>
-            <td>40.000Ar</td>
-            <td>110.000Ar</td>
-        
-          </tr>
-        </tbody>
-      </table>
-      <a href="Accueil.html"><button type="button" class="btn btn-success">Retour</button></a>
+        <table>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Carburant</th>
+                    <th scope="col">Prix/Kg</th>
+                 </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td scope="row">Engrais</td>
+                      <td>30.000Ar/Kg</td>
+                      <td><button type="button" class="btn btn-success">Ajouter</button></td>                                    
+                    </tr>
+                    <tr>
+                        <td scope="row">Carburant</td>
+                        <td>50.000Ar/Kg</td>
+                        <td><button type="button" class="btn btn-success">Ajouter</button></td> 
+                     </tr>
+                     <tr>
+                        <td scope="row">Logistique</td>
+                        <td>25.000Ar/Kg</td>
+                        <td><button type="button" class="btn btn-success">Ajouter</button></td> 
+                     </tr>
+        </table>
+        <h3>Date d'aujourd'hui</h3>
+        <input type="date">
 
-    <h2 >Graphique</h2>
-    <canvas id="myChart" width="400" height="200"></canvas>
+    
+
+        <h3>Montant</h3>
+        <input type="number" name="montant" placeholder="XXXX Ar">
+        <br><br>  
+            <a href="Accueil.html"><button type="button" class="btn">VALIDER</button></a>
+            <a href="Accueil.html">Retour</a>
+          
+          </div>
+        </center>
+        
+
+        </div>
+
+
+       </ul>
     </div>
-    <script>
-        // Récupérer l'élément canvas
-        var ctx = document.getElementById('myChart').getContext('2d');
-    
-        // Créer un nouvel objet Chart et le configurer
-        var myChart = new Chart(ctx, {
-            type: 'bar', // Type de graphique
-            data: {
-                labels: ['Arizo', 'Nalitiana', 'Mialy'], // Étiquettes des barres
-                datasets: [{
-                    label: 'Dépenses mensuelles', // Légende du dataset
-                    data: [16, 40, 11], // Données à afficher sur le graphique
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Couleur de fond des barres
-                    borderColor: 'rgba(54, 162, 235, 1)', // Couleur de la bordure des barres
-                    borderWidth: 10 // Largeur de la bordure des barres
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true // Commencer l'axe Y à zéro
-                    }
-                }
-            }
-        });
-    </script>
 
-<footer>RAJOELINA Arizo Ny Aina_etu2478-TOVOARIVELO Nalitiana_etu2647-ANDRIAMALALA Mialy Ny Anjatiana_etu2371</footer>
+    <footer>RAJOELINA Arizo Ny Aina_etu2478-TOVOARIVELO Nalitiana_etu2647-ANDRIAMALALA Mialy Ny Anjatiana_etu2371</footer>
 </body>
 </html>
