@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
-    <title>Production de thé</title>
+    <title>Tea production</title>
     <center>
     <nav class="navbar navbar-default">
         <div class="container-fluid">   
@@ -24,15 +24,15 @@
             </button>
             
             <ul class="nav navbar-nav navbar-right">
-               
-              <li><img src="img/User.jpg" width="100" height="100" ></li> 
-              <li><a href="Cueillir.html"><h4>Cueillir</h4></a></li>
-              <li><a href="Index.html"><h4>Se deconnecter</h4></a></li>
+                <li><img src="img/User.jpg" width="100" height="100" ></li>
+                <li><a href=Accueil.html><h4>Accueil</h4></a></li>
+                <li><a aria-disabled="true"><h4>Cueillir</h4></a></li>
+                <li><a href="Depenses.html"><h4>Gerer les depenses</h4></a></li>
+                <li><a href="Index.html"><h4>Se deconnecter</h4></a></li>
 
             
                 
             </div>
-            
         </div>
     </nav>
 </center>
@@ -41,40 +41,36 @@
 <body>
     <center>
     <div class="container">
-        <table>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Carburant</th>
-                    <th scope="col">Prix/Kg</th>
-                 </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <td scope="row">Engrais</td>
-                      <td>30.000Ar/Kg</td>
-                      <td><button type="button" class="btn btn-success">Ajouter</button></td>                                    
-                    </tr>
-                    <tr>
-                        <td scope="row">Carburant</td>
-                        <td>50.000Ar/Kg</td>
-                        <td><button type="button" class="btn btn-success">Ajouter</button></td> 
-                     </tr>
-                     <tr>
-                        <td scope="row">Logistique</td>
-                        <td>25.000Ar/Kg</td>
-                        <td><button type="button" class="btn btn-success">Ajouter</button></td> 
-                     </tr>
-        </table>
-        <h3>Date d'aujourd'hui</h3>
-        <input type="date">
-
+        <h2>Formulaire à remplir</h2>
+    <label for="date">Date de début :</label>
+    <br>
+    <input type="date" id="date" name="date" value="2024-02-13" required>
+    <br>
+        <label for="choix">Choisir la catégorie:</label>
+            <br>
+        <select class="form-select form-select-lg mb-3" name="cueilleur" id="">
+            <option value="">--Choisir--</option>
+            <option value="">Engrais</option>
+            <option value="">Carburant</option>
+            <option value="">Logistique</option>
+        </select>
     
+        <br><br>
+       <label for="catg">Choisir le carburant</label>
+        <br>
+        <select class="form-select form-select-lg mb-3" name="cueilleur" id="">
+            <option value="">--Choisir--</option>
+            <option value="">Crotte de zébus</option>
+            <option value="">Pelle</option>
+            <option value="">Essence</option>
+        </select><br><br>
 
-        <h3>Montant</h3>
-        <input type="number" name="montant" placeholder="XXXX Ar">
-        <br><br>  
-            <a href="Accueil.html"><button type="button" class="btn">VALIDER</button></a>
+
+        <label for="montant">Montant</label>
+        <input type="number"  min="1" max="100">
+        <br><br>
+        <div class="input-box button">
+            <a href="Panier.html"><button type="button" class="btn">VALIDER</button></a><br>
             <a href="Accueil.html">Retour</a>
           
           </div>
@@ -87,6 +83,6 @@
        </ul>
     </div>
 
-    <footer>RAJOELINA Arizo Ny Aina_etu2478-TOVOARIVELO Nalitiana_etu2647-ANDRIAMALALA Mialy Ny Anjatiana_etu2371</footer>
+    
 </body>
 </html>

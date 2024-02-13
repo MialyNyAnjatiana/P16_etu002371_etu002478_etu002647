@@ -4,7 +4,7 @@ body {
     display: grid;
     height: 100vh;
     width: 100%;
-    background-image:url("img/Achat.jpg");
+    background-image:url("../img/Achat.jpg");
   }
   body {
     font-family: Arial, sans-serif;
