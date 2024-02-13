@@ -6,6 +6,11 @@
     width: 100%;
     background-image:url("img/cueilleur.jpg");
   }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
   .container {
     margin-top: 30px;
     background: #ffffffb5;
