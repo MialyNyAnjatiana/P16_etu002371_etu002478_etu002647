@@ -7,7 +7,7 @@ try {
 
     $conn = connect();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM utilisateur AS u JOIN page_admin AS a ON u.id_user=a.id_user WHERE nom_user = '$login' AND mdp = '$mdp'";
+    $sql = "SELECT * FROM productionThé_utilisateur AS u JOIN productionThé_page_admin AS a ON u.id_user=a.id_user WHERE nom_user = '$login' AND mdp = '$mdp'";
     $stmt = $conn->query($sql);
     $stmt->setFetchMode(PDO::FETCH_OBJ);
     $user = null;

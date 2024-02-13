@@ -6,7 +6,7 @@ try {
 
     $retour = null;
 
-    $result = $conn->query("SELECT * FROM cueilleur AS c JOIN genre AS g ON c.id_genre=g.id_genre");
+    $result = $conn->query("SELECT * FROM productionThé_cueilleur AS c JOIN productionThé_genre AS g ON c.id_genre=g.id_genre");
     $result->setFetchMode(PDO::FETCH_OBJ);
 
     while ($row = $result->fetch()) {

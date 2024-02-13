@@ -1,7 +1,7 @@
 <?php
     function connect() {
-        $dsn = 'mysql:host=localhost;port=3306;dbname=db_exam';
-        $user = 'root';
+        $dsn = 'mysql:host=172.10.0.113;port=3306;dbname=';
+        $user = 'ETU002647';
         $pass = '';
         
         try {

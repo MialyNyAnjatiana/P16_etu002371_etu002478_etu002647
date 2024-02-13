@@ -6,7 +6,7 @@ try {
 
     $retour = null;
 
-        $result = $conn->query("SELECT * FROM ctg_depense");
+        $result = $conn->query("SELECT * FROM productionThé_ctg_depense");
         $result->setFetchMode(PDO::FETCH_OBJ);
 
         while ($row = $result->fetch()) {

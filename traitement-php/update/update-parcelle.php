@@ -8,7 +8,7 @@ try {
     $var = $_POST['var'];
     $srf = $_POST['srf'];
 
-    $sql = "UPDATE parcelle SET id_var = $var, surface = $srf WHERE id_parcelle = $id";
+    $sql = "UPDATE productionThé_parcelle SET id_var = $var, surface = $srf WHERE id_parcelle = $id";
     $result = $conn->exec($sql);
     $conn = null;
     

@@ -9,7 +9,7 @@ try {
     $genre = $_GET['genre'];
     $salaire = $_GET['sal'];
 
-    $sql = "INSERT INTO cueilleur VALUES (null, '$nom', '$dtn', $genre, $salaire)";
+    $sql = "INSERT INTO productionThé_cueilleur VALUES (null, '$nom', '$dtn', $genre, $salaire)";
     $result = $conn->exec($sql);
     echo "success";
     $conn = null;

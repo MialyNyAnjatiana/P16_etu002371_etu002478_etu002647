@@ -7,7 +7,7 @@ try {
     $id_cueilleur = $_GET['id'];
     $sal = $_GET['new'];
 
-    $sql = "UPDATE cueilleur SET salaire = $sal WHERE id_cueilleur = $id_cueilleur";
+    $sql = "UPDATE productionThé_cueilleur SET salaire = $sal WHERE id_cueilleur = $id_cueilleur";
     $result = $conn->exec($sql);
     $conn = null;
     

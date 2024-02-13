@@ -11,7 +11,7 @@ try {
     $date = $_GET['date'];
     $poid =$_GET['poid'];
 
-    $sql = "INSERT INTO cueillette VALUES (null, $id, $id_c, $id_p, '$date', $poid)";
+    $sql = "INSERT INTO productionThé_cueillette VALUES (null, $id, $id_c, $id_p, '$date', $poid)";
     $result = $conn->exec($sql);
 
     echo "success";

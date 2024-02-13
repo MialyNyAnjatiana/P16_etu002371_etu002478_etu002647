@@ -10,7 +10,7 @@ try {
     $date = $_GET['date'];
     $montant =$_GET['montant'];
 
-    $sql = "INSERT INTO depense VALUES (null, $id, $id_c, '$date', $montant)";
+    $sql = "INSERT INTO productionThé_depense VALUES (null, $id, $id_c, '$date', $montant)";
     $result = $conn->exec($sql);
     echo "success";
     $conn = null;
