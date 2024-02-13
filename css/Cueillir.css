@@ -4,7 +4,7 @@
     display: grid;
     height: 100vh;
     width: 100%;
-    background-image:url("img/cueilleur.jpg");
+    background-image:url("../img/cueilleur.jpg");
   }
   body {
     font-family: Arial, sans-serif;

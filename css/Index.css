@@ -10,7 +10,7 @@ body {
   height: 100vh;
   width: 100%;
   place-items: center;
-  background-image:url("img/thé.png");
+  background-image:url("../img/thé.png");
 }
 ::selection {
   background: #ff80bf;
