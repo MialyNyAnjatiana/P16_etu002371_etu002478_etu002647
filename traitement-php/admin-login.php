@@ -13,7 +13,7 @@ try {
     $user = null;
 
     while ($row = $stmt->fetch()) {
-        $user = array('id' => $row->id_user, 'name' => $row->nom_user);
+        $user = array('id' => $row->id_user, 'nom' => $row->nom_user);
     }
 
     if ($user['id'] != null) {
